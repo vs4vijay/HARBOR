@@ -22,4 +22,6 @@ sdk install java
 sdk install gradle
 sdk install micronaut
 
+mn create-app harbor -i --test=spock
+
 ```
