@@ -9,4 +9,9 @@ public class AppController {
     public String index() {
         return "Harbor Service";
     }
+
+    @Get(uri="/healthCheck", produces="text/plain")
+    public String healthCheck() {
+        return "health check";
+    }
 }

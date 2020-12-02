@@ -5,7 +5,8 @@ A Microservice in Micronaut
 
 ```shell
 
-gradlew run
+gradle run
+gradle run --continuous
 
 ```
 
@@ -23,5 +24,16 @@ sdk install gradle
 sdk install micronaut
 
 mn create-app harbor -i --test=spock
+
+gradle run
+gradle dockerBuild
+gradle nativeImage
+
+---
+
+
+@JdbcRepository
+
+Declarative Rest Client
 
 ```
