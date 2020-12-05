@@ -31,9 +31,34 @@ gradle nativeImage
 
 ---
 
+Micronaut
+
+- AOT
+- Fast startup time
+- Low Memory Footprint
+- No Reflections
+- DI
+- AOP
+- Features
+  - Micronaut Data
+  - hibernate-jpa
+  - jib
+  - micronaut-management
+  - micronaut-openapi
+
+---
+
 
 @JdbcRepository
 
 Declarative Rest Client
+
+application-test.yml
+
+
+
+Ref:
+- https://www.youtube.com/watch?v=S5yfTfPeue8
+
 
 ```
