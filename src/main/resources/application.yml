@@ -3,3 +3,43 @@ micronaut:
     name: harbor
   server:
     port: 9000
+    dualProtocol: true
+    cors:
+      enabled: true
+    netty:
+      access-logger:
+        enabled: true
+  ssl:
+    port: 9001
+    enabled: true
+    buildSelfSigned: true
+  security:
+    enabled: false
+    endpoints:
+      login:
+        enabled: true
+  datasources:
+    default: {}
+  http:
+    services:
+      spacex:
+        urls:
+          - "https://api.spacexdata.com/v3"
+
+liquibase:
+  datasources:
+    default:
+      change-log: "classpath:db/liquibase-changelog.xml"
+
+endpoints:
+  all:
+    path: "/management"
+    sensitive: false
+  health:
+    details-visible: ANONYMOUS
+  loggers:
+    enabled: true
+  stop:
+    enabled: true
+  liquibase:
+    enabled: true

@@ -5,8 +5,14 @@ A Microservice in Micronaut
 
 ```shell
 
+# Run application
 ./gradlew run
+
+# Run application in watching mode
 ./gradlew run --continuous
+
+# Package application
+./gradlew assemble
 
 ```
 
@@ -24,9 +30,14 @@ sdk install gradle
 sdk install micronaut
 
 mn create-app harbor -i --test=junit
+mn create-controller SpaceX
+mn create-bean SpaceXService
+mn create-client SpaceX
 
 gradle run
+gradle jib
 gradle dockerBuild
+gradle dockerBuildNative
 gradle nativeImage
 
 gradle clean run
@@ -42,11 +53,27 @@ Micronaut
 - DI
 - AOP
 - Features
-  - Micronaut Data-processor,jdbc}
-  - hibernate-jpa
+  - Micronaut Data-{processor,jdbc}
+  - Micronaut Security-{annotations,jwt} 
   - jib
-  - micronaut-management
+  - config-consul
+  - micronaut-discovery-client
   - micronaut-openapi
+  - micronaut-jdbc-hikari
+  - micronaut-hibernate-jpa
+  - micronaut-liquibase
+  - micronaut-graal
+  - micronaut-management
+  - micrometer-atlas
+  - micronaut-tracing
+  - micronaut-kubernetes-discovery-client
+- Microservice design patterns - Service Discovery, Circuit Breaker
+- Scaffolding
+- Cache
+- Default Login and Logout Handler
+- Various auth and ecurity mechanisms - https://guides.micronaut.io/micronaut-security-jwt/guide/index.html
+- Support for ScheduledJob
+- Configuration
 
 ---
 
@@ -59,10 +86,17 @@ Micronaut
 
 Declarative Rest Client
 Declarative Crud Repository
+Client-side Load Balancing
 
 application-test.yml
 
 Annotation Configuration
+
+Management Endpoints
+/beans
+/health
+/metrics
+/info
 
 @Inject
 EmbeddedServer server //refers to the server that was started up for this test suite
@@ -73,6 +107,19 @@ ApplicationContext context
 GraalVM
 
 <logger name="io.micronaut.http.client" level="TRACE"/>
+
+try (ApplicationContext context = ApplicationContext.run()) { 
+    MyBean myBean = context.getBean(MyBean.class); 
+    // do something with your bean
+}
+Environment environment = applicationContext.getEnvironment();
+final BeanContext context = BeanContext.run();
+
+Map<String, Person> inMemoryDatastore = new ConcurrentHashMap<>();
+
+Operations and Fallback
+
+Lombok - https://docs.micronaut.io/2.2.0/guide/index.html#lombok
 
 Ref:
 - https://www.youtube.com/watch?v=S5yfTfPeue8
