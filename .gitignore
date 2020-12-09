@@ -24,3 +24,7 @@ hs_err_pid*
 
 build/
 .gradle/
+gradle/
+!gradle/wrapper
+
+.idea/

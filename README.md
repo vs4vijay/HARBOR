@@ -40,7 +40,7 @@ Micronaut
 - DI
 - AOP
 - Features
-  - Micronaut Data
+  - Micronaut Data-processor,jdbc}
   - hibernate-jpa
   - jib
   - micronaut-management
@@ -48,17 +48,28 @@ Micronaut
 
 ---
 
+@Entity
+@Id
+@GeneratedValue
 
-@JdbcRepository
+
+@JdbcRepository, {CrudRepository<>,PageableRepository<>}
 
 Declarative Rest Client
+Declarative Crud Repository
 
 application-test.yml
 
+Annotation Configuration
 
+
+
+GraalVM
 
 Ref:
 - https://www.youtube.com/watch?v=S5yfTfPeue8
-
+- https://github.com/asc-lab/micronaut-microservices-poc
+- https://alvarosanchez.github.io/micronaut-workshop/
+- https://mfarache.github.io/mfarache/Building-microservices-Micronoaut/
 
 ```
