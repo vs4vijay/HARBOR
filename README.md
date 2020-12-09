@@ -62,7 +62,11 @@ application-test.yml
 
 Annotation Configuration
 
+@Inject
+EmbeddedServer server //refers to the server that was started up for this test suite
 
+@Inject
+ApplicationContext context
 
 GraalVM
 
