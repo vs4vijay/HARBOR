@@ -72,6 +72,8 @@ ApplicationContext context
 
 GraalVM
 
+<logger name="io.micronaut.http.client" level="TRACE"/>
+
 Ref:
 - https://www.youtube.com/watch?v=S5yfTfPeue8
 - https://github.com/asc-lab/micronaut-microservices-poc
