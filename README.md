@@ -5,8 +5,8 @@ A Microservice in Micronaut
 
 ```shell
 
-gradle run
-gradle run --continuous
+./gradlew run
+./gradlew run --continuous
 
 ```
 
@@ -23,11 +23,13 @@ sdk install java
 sdk install gradle
 sdk install micronaut
 
-mn create-app harbor -i --test=spock
+mn create-app harbor -i --test=junit
 
 gradle run
 gradle dockerBuild
 gradle nativeImage
+
+gradle clean run
 
 ---
 
