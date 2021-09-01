@@ -33,6 +33,7 @@ mn create-app harbor -i --test=junit
 mn create-controller SpaceX
 mn create-bean SpaceXService
 mn create-client SpaceX
+mn feature-diff --features acme
 
 gradle run
 gradle jib
@@ -53,7 +54,7 @@ Micronaut
 - DI
 - AOP
 - Features
-  - Micronaut Data-{processor,jdbc}
+  - Micronaut Data-{processor,jdbc} - https://micronaut-projects.github.io/micronaut-data/latest/guide/index.html
   - Micronaut Security-{annotations,jwt} 
   - jib
   - config-consul
