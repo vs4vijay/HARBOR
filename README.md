@@ -72,9 +72,11 @@ Micronaut
 - Scaffolding
 - Cache
 - Default Login and Logout Handler
-- Various auth and ecurity mechanisms - https://guides.micronaut.io/micronaut-security-jwt/guide/index.html
+- Various auth and security mechanisms - https://guides.micronaut.io/micronaut-security-jwt/guide/index.html
 - Support for ScheduledJob
 - Configuration
+- Test Container
+- Build Native Image using GraalVM
 
 ---
 
@@ -121,6 +123,13 @@ Map<String, Person> inMemoryDatastore = new ConcurrentHashMap<>();
 Operations and Fallback
 
 Lombok - https://docs.micronaut.io/2.2.0/guide/index.html#lombok
+
+Use JPARepository for Hibernate
+
+HttpResponse.status(HttpStatus.CREATED).body("success")
+
+@Introspected for POJO/DTO
+
 
 Ref:
 - https://www.youtube.com/watch?v=S5yfTfPeue8
